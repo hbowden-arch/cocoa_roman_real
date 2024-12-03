@@ -1,0 +1,28 @@
+/groups/behroozi/hbowden/cocoa/Cocoa/installation_scripts/create_link_all_projects.sh: line 55: /dev/tty: No such device or address
+Traceback (most recent call last):
+  File "/groups/behroozi/hbowden/cocoa/Cocoa/projects/roman_real/calc_dvs.py", line 233, in <module>
+    train_samples, train_data_vectors, train_sigma8 = get_data_vectors(params_train, comm, rank, label_train)
+  File "/groups/behroozi/hbowden/cocoa/Cocoa/projects/roman_real/calc_dvs.py", line 194, in get_data_vectors
+    local_params_list, local_data_vector_list, local_sigma8_list = get_local_data_vector_list(params_list,rank,label)
+  File "/groups/behroozi/hbowden/cocoa/Cocoa/projects/roman_real/calc_dvs.py", line 167, in get_local_data_vector_list
+    data_vector = cocoa_model.calculate_data_vector(params_list[i])
+  File "/groups/behroozi/hbowden/cocoa/Cocoa/projects/roman_real/cocoa_emu/cocoa_model.py", line 44, in calculate_data_vector
+    compute_success = component.check_cache_and_compute(
+  File "/groups/behroozi/hbowden/cocoa/Cocoa/cobaya/cobaya/theory.py", line 253, in check_cache_and_compute
+    if self.calculate(state, want_derived, **params_values_dict) is False:
+  File "/groups/behroozi/hbowden/cocoa/Cocoa/cobaya/cobaya/likelihood.py", line 128, in calculate
+    state["logp"] = self.logp(_derived=derived, **params_values_dict)
+  File "/groups/behroozi/hbowden/cocoa/Cocoa/cobaya/cobaya/likelihoods/roman_real/roman_real_3x2pt.py", line 10, in logp
+    datavector = self.internal_get_datavector(**params_values)
+AttributeError: 'roman_real_3x2pt' object has no attribute 'internal_get_datavector'
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun detected that one or more processes exited with non-zero status, thus causing
+the job to be terminated. The first process to do so was:
+
+  Process name: [[60328,1],0]
+  Exit code:    1
+--------------------------------------------------------------------------

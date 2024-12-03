@@ -1,0 +1,536 @@
+### Motivation:
+###     TEST Generate Data Vector Roman 3x2pt
+###     - data vector: ROMAN 3x2
+###     - scale cut: baseline (not LCDM-optimized)
+###     - number of Qs marginalized: 0
+### -----------------------------------------------------------------
+### cosmology: baseline (omegam, As, ns, omegab, H0)
+### systematics: 
+###     - shear calibration bias: multiplicative, 
+###     - photo-z uncertainty: gaussian
+###     - galaxy bias: linear bias
+###     - intrinsic alignment: NLA
+### analysis choice:
+###     - gaussian covariance
+### external probes: None
+### data vector: ROMAN 3x2pt
+
+timing: True
+debug: True
+stop_at_error: True
+
+###likelihood:
+###  roman_real.roman_real_3x2pt:
+###    path: ./projects/roman_real/data
+    ##path: data
+###    data_file: roman_real.dataset
+###    integration_accuracy: 0
+###    IA_model: 0
+###    IA_redshift_evolution: 3
+
+likelihood:
+  roman_real.roman_real_3x2pt:
+    path: ./external_modules/data/roman_real
+    data_file: roman_real.dataset
+    #data_file: roman_real_M1_GGL0.05.dataset 
+    #data_file: roman_real_M2_GGL0.05.dataset  
+    #data_file: roman_real_M3_GGL0.05.dataset  
+    #data_file: roman_real_M4_GGL0.05.dataset  
+    #data_file: roman_real_M5_GGL0.05.dataset  
+    #data_file: roman_real_M6_GGL0.05.dataset 
+    print_datavector: False
+    #print_datavector_file: "./projects/roman_real/chains/roman_real_theory.modelvector"
+    #accuracyboost: 1.0
+    #integration_accuracy: 10
+    #kmax_boltzmann: 5.0
+    # 1 EE2, 2 Halofit
+    #non_linear_emul: 2
+    IA_model: 0
+    IA_redshift_evolution: 3
+    # ------------------------------------------------------------------------
+    # Settings adopted when printing the roman_real_theory.modelvector
+    # ------------------------------------------------------------------------
+    #data_file: roman_real_M6_GGL0.05.dataset
+    #print_datavector: True
+    #print_datavector_file: "./projects/roman_real/chains/roman_real_theory.modelvector"
+    #accuracyboost: 3.0
+    #integration_accuracy: 10 
+    #kmax_boltzmann: 20.0
+    # 1 EE2, 2 Halofit
+    #non_linear_emul: 2
+
+    
+    
+params:
+  As_1e9:
+    prior:
+      min: 0.5
+      max: 5
+    ref:
+      dist: norm
+      loc: 2.1
+      scale: 0.65
+    proposal: 0.4
+    latex: 10^9 A_\mathrm{s})
+    drop: true
+    renames: A
+  ns:
+    prior:
+      min: 0.87
+      max: 1.07
+    ref:
+      dist: norm
+      loc: 0.96605
+      scale: 0.01
+    proposal: 0.01
+    latex: n_\mathrm{s}
+  H0:
+    prior:
+      min: 55
+      max: 91
+    ref:
+      dist: norm
+      loc: 67.32
+      scale: 5
+    proposal: 3
+    latex: H_0
+  omegab:
+    prior:
+      min: 0.03
+      max: 0.07
+    ref:
+      dist: norm
+      loc: 0.0495
+      scale: 0.004
+    proposal: 0.004
+    latex: \Omega_\mathrm{b}
+    drop: true
+  omegam:
+    prior:
+      min: 0.1
+      max: 0.9
+    ref:
+      dist: norm
+      loc: 0.316
+      scale: 0.02
+    proposal: 0.02
+    latex: \Omega_\mathrm{m}
+    drop: true
+  mnu:
+    prior:
+      min: 0.06
+      max: 0.6
+    ref:
+      dist: norm
+      loc: 0.25
+      scale: 0.1
+    proposal: 0.05
+    latex: 'm_{\nu}'
+  w0pwa:
+    prior:
+      min: -5 
+      max: -0.01
+    ref:
+      dist: norm
+      loc: -0.99
+      scale: 0.05
+    proposal: 0.05
+    latex: w_{0,\mathrm{DE}}+w_{a,\mathrm{DE}}
+    drop: true
+  w:
+    prior:
+      min: -3
+      max: -0.01
+    ref:
+      dist: norm
+      loc: -0.99
+      scale: 0.05
+    proposal: 0.05
+    latex: w_{0,\mathrm{DE}}
+  tau:
+    value: 0.0697186
+    latex: \tau_\mathrm{reio}
+  # ------------------------------------------------------------------
+  # ------------- Derived Parameters ---------------------------------
+  # ------------------------------------------------------------------
+  As:
+    value: 'lambda As_1e9: 1e-9 * As_1e9'
+    latex: A_\mathrm{s}
+  wa:
+    value: 'lambda w0pwa, w: w0pwa - w'
+    latex: w_{a,\mathrm{DE}}
+  omegabh2:
+    value: 'lambda omegab, H0: omegab*(H0/100)**2'
+    latex: \Omega_\mathrm{b} h^2
+  omegach2:
+    value: 'lambda omegam, omegab, mnu, H0: (omegam-omegab)*(H0/100)**2-(mnu*(3.046/3)**0.75)/94.0708'
+    latex: \Omega_\mathrm{c} h^2
+  omegal:
+    latex: \Omega_\Lambda
+  omegamh2:
+    derived: 'lambda omegam, H0: omegam*(H0/100)**2'
+    latex: \Omega_\mathrm{m} h^2
+  sigma8:
+    latex: \sigma_8
+  s8h5:
+    derived: 'lambda sigma8, H0: sigma8*(H0*1e-2)**(-0.5)'
+    latex: \sigma_8/h^{0.5}
+  s8omegamp5:
+    derived: 'lambda sigma8, omegam: sigma8*omegam**0.5'
+    latex: \sigma_8 \Omega_\mathrm{m}^{0.5}
+  s8omegamp25:
+    derived: 'lambda sigma8, omegam: sigma8*omegam**0.25'
+    latex: \sigma_8 \Omega_\mathrm{m}^{0.25}
+  age:
+    latex: '{\rm{Age}}/\mathrm{Gyr}'
+  rdrag:
+    latex: r_\mathrm{drag}
+  yheused:
+    latex: Y_P^\mathrm{BBN}
+  omegan2:
+    latex: \Omega_\mathrm{\\nu} h^2
+  omegan:
+    derived: 'lambda omegan2, H0: omegan2/((H0/100)**2)'
+    latex: \Omega_\mathrm{\\nu}
+  # ------------------------------------------------------------------
+  # ROMAN-Y1 3x2 nuissance parameter begins
+  # ------------------------------------------------------------------
+
+  # galaxy bias: linear bias
+  # ========================
+  # same as default, flat prior [0.8, 3.0] 
+
+  # intrinsic alignment: NLA
+  # ========================
+  # as default, ROMAN_A1_1 [-5, 5]; ROMAN_A1_2 [-5, 5]
+  # fiducial value: 0.6, -1.5
+
+  # photo-z uncertainty: gaussian
+  # =============================
+  # Source galaxies photo-z errors
+ 
+  # shear calibration bias: multiplicative
+  # ======================================
+
+  # Shear calibration parameters
+  roman_M1:
+    value: 0.0
+    latex: m_\mathrm{roman}^1
+  roman_M2:
+    value: 0.0
+    latex: m_\mathrm{roman}^2
+  roman_M3:
+    value: 0.0
+    latex: m_\mathrm{roman}^3
+  roman_M4:
+    value: 0.0
+    latex: m_\mathrm{roman}^4
+  roman_M5:
+    value: 0.0
+    latex: m_\mathrm{roman}^5
+  roman_M6:
+    value: 0.0
+    latex: m_\mathrm{roman}^6
+  roman_M7:
+    value: 0.0
+    latex: m_\mathrm{roman}^7
+  roman_M8:
+    value: 0.0
+    latex: m_\mathrm{roman}^8
+  roman_M9:
+    value: 0.0
+    latex: m_\mathrm{roman}^9
+  roman_M10:
+    value: 0.0
+    latex: m_\mathrm{roman}^10
+  # ------------------------------------------------------------------------
+  # ------------------------------------------------------------------------
+  # ------------------------------------------------------------------------
+  # ------------------------------------------------------------------------
+  # BARYON PCA
+  roman_BARYON_Q1:
+    value: 0.0
+    latex: Q1_\mathrm{roman}^1
+  roman_BARYON_Q2:
+    value: 0.0
+    latex: Q2_\mathrm{roman}^2
+  roman_BARYON_Q3:
+    value: 0.0
+    latex: Q3_\mathrm{roman}^3
+  roman_BARYON_Q4:
+    value: 0.0
+    latex: Q4_\mathrm{roman}^4
+
+  
+  # baryon effects: scale cut
+
+  # Fixed params of Maglim bin 5-6
+
+    # Bin bias parameters
+  roman_B1_1:
+    value: 1.12
+    latex: b_\mathrm{1-roman}^1
+  roman_B1_2:
+    value: 1.24
+    latex: b_\mathrm{1-roman}^2
+  roman_B1_3:
+    value: 1.32
+    latex: b_\mathrm{1-roman}^3
+  roman_B1_4:
+    value: 1.40
+    latex: b_\mathrm{1-roman}^4
+  roman_B1_5:
+    value: 1.48
+    latex: b_\mathrm{1-roman}^5
+  roman_B1_6:
+    value: 1.57
+    latex: b_\mathrm{1-roman}^6
+  roman_B1_7:
+    value: 1.69
+    latex: b_\mathrm{1-roman}^7
+  roman_B1_8:
+    value: 1.84
+    latex: b_\mathrm{1-roman}^8
+  roman_B1_9:
+    value: 2.08
+    latex: b_\mathrm{1-roman}^9
+  roman_B1_10:
+    value: 2.82
+    latex: b_\mathrm{1-roman}^10
+  # ------------------------------------------------------------------------
+  # ------------------------------------------------------------------------
+  # ------------------------------------------------------------------------
+  roman_B2_1:
+    value: 0.0
+    latex: b_\mathrm{2-roman}^1
+  roman_B2_2:
+    value: 0.0
+    latex: b_\mathrm{2-roman}^2
+  roman_B2_3:
+    value: 0.0
+    latex: b_\mathrm{2-roman}^3
+  roman_B2_4:
+    value: 0.0
+    latex: b_\mathrm{2-roman}^4
+  roman_B2_5:
+    value: 0.0
+    latex: b_\mathrm{2-roman}^5
+  roman_B2_6:
+    value: 0.0
+    latex: b_\mathrm{2-roman}^6
+  roman_B2_7:
+    value: 0.0
+    latex: b_\mathrm{2-roman}^7
+  roman_B2_8:
+    value: 0.0
+    latex: b_\mathrm{2-roman}^8
+  roman_B2_9:
+    value: 0.0
+    latex: b_\mathrm{2-roman}^9
+  roman_B2_10:
+    value: 0.0
+    latex: b_\mathrm{2-roman}^10
+  # ------------------------------------------------------------------------
+  # ------------------------------------------------------------------------
+  # ------------------------------------------------------------------------
+  roman_BMAG_1:
+    value: 0.0
+    latex: b_\mathrm{BMAG-roman}^1
+  roman_BMAG_2:
+    value: 0.0
+    latex: b_\mathrm{BMAG-roman}^2
+  roman_BMAG_3:
+    value: 0.0
+    latex: b_\mathrm{BMAG-roman}^3
+  roman_BMAG_4:
+    value: 0.0
+    latex: b_\mathrm{BMAG-roman}^4
+  roman_BMAG_5:
+    value: 0.0
+    latex: b_\mathrm{BMAG-roman}^5
+  roman_BMAG_6:
+    value: 0.0
+    latex: b_\mathrm{BMAG-roman}^6
+  roman_BMAG_7:
+    value: 0.0
+    latex: b_\mathrm{BMAG-roman}^7
+  roman_BMAG_8:
+    value: 0.0
+    latex: b_\mathrm{BMAG-roman}^8
+  roman_BMAG_9:
+    value: 0.0
+    latex: b_\mathrm{BMAG-roman}^9
+  roman_BMAG_10:
+    value: 0.0
+    latex: b_\mathrm{BMAG-roman}^10
+  
+
+  # ------------------------------------------------------------------
+  # ROMAN-Y1 3x2 nuissance parameter ends
+  # ------------------------------------------------------------------
+
+theory:
+  camb:
+    path: ./external_modules/code/CAMB
+    stop_at_error: False
+    use_renames: True
+    extra_args:
+      halofit_version: takahashi
+      AccuracyBoost: 1.1
+      lens_potential_accuracy: 1.1
+      num_massive_neutrinos: 1
+      nnu: 3.046
+      dark_energy_model: ppf
+      accurate_massive_neutrino_transfers: false
+      k_per_logint: 20
+
+sampler:
+  evaluate:
+    N: 1
+    override:
+      As_1e9: 2.1
+      ns: 0.96605
+      H0: 67.32
+      omegab: 0.04
+      omegam: 0.3
+      mnu: 0.06
+#sampler:
+#  mcmc:
+    # ---------------------------------------------------------------------
+    # File (w/ path) or matrix defining a covariance matrix for the proposal:
+    # - null (default): will be generated from params info (prior and proposal)
+    # - matrix: remember to set `covmat_params` to the parameters in the matrix
+    #covmat: ./EXAMPLE_MCMC1.covmat
+    #covmat:
+#    covmat_params:
+    # ---------------------------------------------------------------------
+    # ---------------------------------------------------------------------
+    # Proposal covariance matrix learning
+    # ---------------------------------------------------------------------
+    # ---------------------------------------------------------------------
+#    learn_proposal: True
+    # Don't learn if convergence better than...
+#    learn_proposal_Rminus1_min: 0.035
+    # Don't learn if convergence is worse than...
+#    learn_proposal_Rminus1_max: 150.
+    # (even earlier if a param is not in the given covariance matrix)
+#    learn_proposal_Rminus1_max_early: 300.
+    # ---------------------------------------------------------------------
+    # ---------------------------------------------------------------------
+    # Convergence and stopping
+    # ---------------------------------------------------------------------
+    # ---------------------------------------------------------------------
+    # Maximum number of posterior evaluations
+#    max_samples: .inf
+    # Gelman-Rubin R-1 on means
+#    Rminus1_stop: 0.02
+    # Gelman-Rubin R-1 on std deviations
+#    Rminus1_cl_stop: 0.2
+#    Rminus1_cl_level: 0.95
+    # ---------------------------------------------------------------------
+    # ---------------------------------------------------------------------
+    # Exploiting speed hierarchy
+    # ---------------------------------------------------------------------
+    # ---------------------------------------------------------------------
+#    measure_speeds: True
+#    drag: False
+#    oversample_power: 0.25
+#    oversample_thin: True
+#    blocking:
+#      - [1,
+#          [
+#             As_1e9, ns, H0, omegab, omegam, w
+#          ]
+#        ]
+#      - [6,
+#          [
+#            roman_DZ_S1, roman_DZ_S2, roman_DZ_S3, roman_DZ_S4, roman_DZ_S5, roman_DZ_S6, roman_DZ_S7, roman_DZ_S8, roman_DZ_S9, roman_DZ_S10,roman_A1_1, roman_A1_2
+#          ]
+#        ]
+#      - [25,
+#          [
+#            roman_M1, roman_M2, roman_M3, roman_M4, roman_M5
+#          ]
+#        ]
+    # ---------------------------------------------------------------------
+    # ---------------------------------------------------------------------
+    # Avoid chain getting suck forever
+    # ---------------------------------------------------------------------
+    # ---------------------------------------------------------------------
+#    max_tries: 10000
+#    burn_in: 0
+    # ---------------------------------------------------------------------
+    # ---------------------------------------------------------------------
+    # When no MPI used, number of fractions of the chain to compare
+    # ---------------------------------------------------------------------
+    # ---------------------------------------------------------------------
+#    Rminus1_single_split: 4
+
+emulator:
+  io:
+    ###savedir: ./projects/desy1xplanck/emulator
+    savedir: ./projects/roman_real/emulator_output
+    ##savedir: /groups/behroozi/hbowden/cocoa/Cocoa/projects/roman_real/emulator_output
+    save_train_data: true
+    save_intermediate_model: true
+    chainname: emu_testing_chain
+  #shear_calib:
+  #  mask: ./projects/desy1xplanck/data/emu_data/DESY3xPLKR4_Maglim_baseline_Ntheta30_shear_calib_mask.npy
+  #  prior_std: 0.0091,0.0078,0.0076,0.0076
+  #baryons:
+    #n_pcas_baryon: 1
+    #prior_Q1: -6.,20.
+    #prior_Q1: 0.0, 7.0
+    #prior_Q2: -4.,4.
+  # galaxy_bias:
+  #   mask: ./projects/desy1xplanck/data/emu_data/DESY3xPLKR4_Maglim_baseline_Ntheta30_linear_gbias_mask.npy
+  #   bias_fid: 1.5,1.8,1.8,1.9,2.3,2.3
+  #   bias_prior: 0.8, 3.0
+  init_sample:
+    type: "lhs" # "lhs" or "gaussian"
+    # LHS section
+    lhs_n: 10 # Latin-Hyper Sample size
+    # Gaussian section
+    #gauss_cov: ./EXAMPLE_MCMC1.covmat
+    #gauss_temp_train: 128 # training dataset temperature
+    #n_train: 1000000
+    #gauss_shift_train: 
+     # omegam: 0.0
+     # sigma8: 0.0
+    #gauss_temp_valid: 64  # validation dataset temperature
+    #n_valid: 10000
+    #gauss_shift_valid:
+  training:
+    emu_type: nn
+    nn_model: 6
+    #dv_fid: ./projects/desy1xplanck/data/data_vectors/xi_DESY3xPLKR4_6x2pt_Maglim_baseline_Ntheta30_dmo.emufid
+    chi_sq_cut: 1.0e+5
+    n_train_iter: 1
+    batch_size: 256
+    n_epochs: 200
+    loss_type: "hyperbola"
+    #loss_type: "clipped_mean"
+    #loss_type: "mean"
+    learning_rate: 1.0e-3
+    weight_decay: 1.0e-3
+    reduce_lr: True
+  derived:
+    sigma8_fid: 0.827706
+    sigma8_std: 0.01
+  sampling:
+    ### This mask is different from the mask in the dataset file
+    ### Dataset mask: can short-cut model vector evaluation
+    ### This mask: can not short-cut mv calculation, applied in EmuSampler likelihood calc
+    ### BUT setting a different mask here would block the gradient back propagation, thus
+    ### the cutted scales are note learnt. 
+    #scalecut_mask: ./projects/desy1xplanck/data/masks/xi_DESY3xPLKR4_6x2pt_Maglim_baseline_Ntheta30_emucons.mask
+    n_mcmc: 1000000
+    #n_mcmc: 10000
+    n_emcee_walkers: 100
+    n_burn_in: 500000
+    #n_burn_in: 5000
+    n_thin: 10
+    # temper0: 0.02
+    # temper_increment: 0.05
+
+output: /groups/behroozi/hbowden/cocoa_cpu/Cocoa/projects/roman_real/emulator_output

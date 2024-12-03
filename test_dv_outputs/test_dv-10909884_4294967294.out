@@ -1,0 +1,9 @@
+Running on host r3u04n1.puma.hpc.arizona.edu
+Time is Mon Dec 2 17:11:50 MST 2024
+Directory is /groups/behroozi/hbowden/cocoa/Cocoa/projects/roman_real
+Slurm job NAME is dv_chain
+Slurm job ID is 10909884
+Number of task is 1
+Number of cpus per task is 10
+[0;31m        (create_link_all_projects.sh) we cannot run [3m SYMLINK CREATION FAILED [0m
+calculating dvs

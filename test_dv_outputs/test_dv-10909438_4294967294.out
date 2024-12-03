@@ -1,0 +1,84 @@
+Running on host r4u06n1.puma.hpc.arizona.edu
+Time is Mon Dec 2 12:55:18 MST 2024
+Directory is /groups/behroozi/hbowden/cocoa/Cocoa/projects/roman_real
+Slurm job NAME is dv_chain
+Slurm job ID is 10909438
+Number of task is 1
+Number of cpus per task is 10
+[0;31m        (create_link_all_projects.sh) we cannot run [3m SYMLINK CREATION FAILED [0m
+calculating dvs
+1 0
+roman_real.roman_real_3x2pt
+{'As_1e9': {'prior': {'min': 0.5, 'max': 5}, 'ref': {'dist': 'norm', 'loc': 2.1, 'scale': 0.65}, 'proposal': 0.4, 'latex': '10^9 A_\\mathrm{s})', 'drop': True, 'renames': 'A'}, 'ns': {'prior': {'min': 0.87, 'max': 1.07}, 'ref': {'dist': 'norm', 'loc': 0.96605, 'scale': 0.01}, 'proposal': 0.01, 'latex': 'n_\\mathrm{s}'}, 'H0': {'prior': {'min': 55, 'max': 91}, 'ref': {'dist': 'norm', 'loc': 67.32, 'scale': 5}, 'proposal': 3, 'latex': 'H_0'}, 'omegab': {'prior': {'min': 0.03, 'max': 0.07}, 'ref': {'dist': 'norm', 'loc': 0.0495, 'scale': 0.004}, 'proposal': 0.004, 'latex': '\\Omega_\\mathrm{b}', 'drop': True}, 'omegam': {'prior': {'min': 0.1, 'max': 0.9}, 'ref': {'dist': 'norm', 'loc': 0.316, 'scale': 0.02}, 'proposal': 0.02, 'latex': '\\Omega_\\mathrm{m}', 'drop': True}, 'mnu': {'prior': {'min': 0.06, 'max': 0.6}, 'ref': {'dist': 'norm', 'loc': 0.25, 'scale': 0.1}, 'proposal': 0.05, 'latex': 'm_{\\nu}'}, 'w0pwa': {'prior': {'min': -5, 'max': -0.01}, 'ref': {'dist': 'norm', 'loc': -0.99, 'scale': 0.05}, 'proposal': 0.05, 'latex': 'w_{0,\\mathrm{DE}}+w_{a,\\mathrm{DE}}', 'drop': True}, 'w': {'prior': {'min': -3, 'max': -0.01}, 'ref': {'dist': 'norm', 'loc': -0.99, 'scale': 0.05}, 'proposal': 0.05, 'latex': 'w_{0,\\mathrm{DE}}'}, 'tau': {'value': 0.0697186, 'latex': '\\tau_\\mathrm{reio}'}, 'As': {'value': 'lambda As_1e9: 1e-9 * As_1e9', 'latex': 'A_\\mathrm{s}'}, 'wa': {'value': 'lambda w0pwa, w: w0pwa - w', 'latex': 'w_{a,\\mathrm{DE}}'}, 'omegabh2': {'value': 'lambda omegab, H0: omegab*(H0/100)**2', 'latex': '\\Omega_\\mathrm{b} h^2'}, 'omegach2': {'value': 'lambda omegam, omegab, mnu, H0: (omegam-omegab)*(H0/100)**2-(mnu*(3.046/3)**0.75)/94.0708', 'latex': '\\Omega_\\mathrm{c} h^2'}, 'omegal': {'latex': '\\Omega_\\Lambda'}, 'omegamh2': {'derived': 'lambda omegam, H0: omegam*(H0/100)**2', 'latex': '\\Omega_\\mathrm{m} h^2'}, 'sigma8': {'latex': '\\sigma_8'}, 's8h5': {'derived': 'lambda sigma8, H0: sigma8*(H0*1e-2)**(-0.5)', 'latex': '\\sigma_8/h^{0.5}'}, 's8omegamp5': {'derived': 'lambda sigma8, omegam: sigma8*omegam**0.5', 'latex': '\\sigma_8 \\Omega_\\mathrm{m}^{0.5}'}, 's8omegamp25': {'derived': 'lambda sigma8, omegam: sigma8*omegam**0.25', 'latex': '\\sigma_8 \\Omega_\\mathrm{m}^{0.25}'}, 'age': {'latex': '{\\rm{Age}}/\\mathrm{Gyr}'}, 'rdrag': {'latex': 'r_\\mathrm{drag}'}, 'yheused': {'latex': 'Y_P^\\mathrm{BBN}'}, 'omegan2': {'latex': '\\Omega_\\mathrm{\\\\nu} h^2'}, 'omegan': {'derived': 'lambda omegan2, H0: omegan2/((H0/100)**2)', 'latex': '\\Omega_\\mathrm{\\\\nu}'}, 'roman_M1': {'value': 0.0, 'latex': 'm_\\mathrm{roman}^1'}, 'roman_M2': {'value': 0.0, 'latex': 'm_\\mathrm{roman}^2'}, 'roman_M3': {'value': 0.0, 'latex': 'm_\\mathrm{roman}^3'}, 'roman_M4': {'value': 0.0, 'latex': 'm_\\mathrm{roman}^4'}, 'roman_M5': {'value': 0.0, 'latex': 'm_\\mathrm{roman}^5'}, 'roman_M6': {'value': 0.0, 'latex': 'm_\\mathrm{roman}^6'}, 'roman_M7': {'value': 0.0, 'latex': 'm_\\mathrm{roman}^7'}, 'roman_M8': {'value': 0.0, 'latex': 'm_\\mathrm{roman}^8'}, 'roman_M9': {'value': 0.0, 'latex': 'm_\\mathrm{roman}^9'}, 'roman_M10': {'value': 0.0, 'latex': 'm_\\mathrm{roman}^10'}, 'roman_BARYON_Q1': {'value': 0.0, 'latex': 'Q1_\\mathrm{roman}^1'}, 'roman_BARYON_Q2': {'value': 0.0, 'latex': 'Q2_\\mathrm{roman}^2'}, 'roman_BARYON_Q3': {'value': 0.0, 'latex': 'Q3_\\mathrm{roman}^3'}, 'roman_BARYON_Q4': {'value': 0.0, 'latex': 'Q4_\\mathrm{roman}^4'}, 'roman_B1_1': {'value': 1.12, 'latex': 'b_\\mathrm{1-roman}^1'}, 'roman_B1_2': {'value': 1.24, 'latex': 'b_\\mathrm{1-roman}^2'}, 'roman_B1_3': {'value': 1.32, 'latex': 'b_\\mathrm{1-roman}^3'}, 'roman_B1_4': {'value': 1.4, 'latex': 'b_\\mathrm{1-roman}^4'}, 'roman_B1_5': {'value': 1.48, 'latex': 'b_\\mathrm{1-roman}^5'}, 'roman_B1_6': {'value': 1.57, 'latex': 'b_\\mathrm{1-roman}^6'}, 'roman_B1_7': {'value': 1.69, 'latex': 'b_\\mathrm{1-roman}^7'}, 'roman_B1_8': {'value': 1.84, 'latex': 'b_\\mathrm{1-roman}^8'}, 'roman_B1_9': {'value': 2.08, 'latex': 'b_\\mathrm{1-roman}^9'}, 'roman_B1_10': {'value': 2.82, 'latex': 'b_\\mathrm{1-roman}^10'}, 'roman_B2_1': {'value': 0.0, 'latex': 'b_\\mathrm{2-roman}^1'}, 'roman_B2_2': {'value': 0.0, 'latex': 'b_\\mathrm{2-roman}^2'}, 'roman_B2_3': {'value': 0.0, 'latex': 'b_\\mathrm{2-roman}^3'}, 'roman_B2_4': {'value': 0.0, 'latex': 'b_\\mathrm{2-roman}^4'}, 'roman_B2_5': {'value': 0.0, 'latex': 'b_\\mathrm{2-roman}^5'}, 'roman_B2_6': {'value': 0.0, 'latex': 'b_\\mathrm{2-roman}^6'}, 'roman_B2_7': {'value': 0.0, 'latex': 'b_\\mathrm{2-roman}^7'}, 'roman_B2_8': {'value': 0.0, 'latex': 'b_\\mathrm{2-roman}^8'}, 'roman_B2_9': {'value': 0.0, 'latex': 'b_\\mathrm{2-roman}^9'}, 'roman_B2_10': {'value': 0.0, 'latex': 'b_\\mathrm{2-roman}^10'}, 'roman_BMAG_1': {'value': 0.0, 'latex': 'b_\\mathrm{BMAG-roman}^1'}, 'roman_BMAG_2': {'value': 0.0, 'latex': 'b_\\mathrm{BMAG-roman}^2'}, 'roman_BMAG_3': {'value': 0.0, 'latex': 'b_\\mathrm{BMAG-roman}^3'}, 'roman_BMAG_4': {'value': 0.0, 'latex': 'b_\\mathrm{BMAG-roman}^4'}, 'roman_BMAG_5': {'value': 0.0, 'latex': 'b_\\mathrm{BMAG-roman}^5'}, 'roman_BMAG_6': {'value': 0.0, 'latex': 'b_\\mathrm{BMAG-roman}^6'}, 'roman_BMAG_7': {'value': 0.0, 'latex': 'b_\\mathrm{BMAG-roman}^7'}, 'roman_BMAG_8': {'value': 0.0, 'latex': 'b_\\mathrm{BMAG-roman}^8'}, 'roman_BMAG_9': {'value': 0.0, 'latex': 'b_\\mathrm{BMAG-roman}^9'}, 'roman_BMAG_10': {'value': 0.0, 'latex': 'b_\\mathrm{BMAG-roman}^10'}}
+Initializing configuration space data vector dimension!
+N_xi_pm: 1650
+N_ggl: 1500
+N_w: 150
+N_gk: 150
+N_sk: 150
+N_kk: 0
+[2024-12-02 12:57:49.459] [[36mdebug[m] [90minitial_setup[0m: Begins
+[2024-12-02 12:57:49.459] [[36mdebug[m] [90minitial_setup[0m: Ends
+[2024-12-02 12:57:49.459] [[36mdebug[m] [90minit_probes[0m: Begins
+[2024-12-02 12:57:49.459] [[36mdebug[m] [90minit_probes[0m: possible_probes = 3x2pt selected
+[2024-12-02 12:57:49.459] [[36mdebug[m] [90minit_probes[0m: Ends
+[2024-12-02 12:57:49.459] [[36mdebug[m] [90minit_binning_real_space[0m: Begins
+[2024-12-02 12:57:49.459] [[36mdebug[m] [90minit_binning_real_space[0m: Ntheta = 15 selected.
+[2024-12-02 12:57:49.459] [[36mdebug[m] [90minit_binning_real_space[0m: theta_min_arcmin = 2.5 selected.
+[2024-12-02 12:57:49.459] [[36mdebug[m] [90minit_binning_real_space[0m: theta_max_arcmin = 250 selected.
+[2024-12-02 12:57:49.459] [[36mdebug[m] [90minit_binning_real_space[0m: Bin 0 - theta_min [rad] = 7.2722e-04, theta [rad] = 8.6452e-04 and theta_max [rad] = 9.8855e-04
+[2024-12-02 12:57:49.459] [[36mdebug[m] [90minit_binning_real_space[0m: Bin 1 - theta_min [rad] = 9.8855e-04, theta [rad] = 1.1752e-03 and theta_max [rad] = 1.3438e-03
+[2024-12-02 12:57:49.459] [[36mdebug[m] [90minit_binning_real_space[0m: Bin 2 - theta_min [rad] = 1.3438e-03, theta [rad] = 1.5975e-03 and theta_max [rad] = 1.8267e-03
+[2024-12-02 12:57:49.459] [[36mdebug[m] [90minit_binning_real_space[0m: Bin 3 - theta_min [rad] = 1.8267e-03, theta [rad] = 2.1716e-03 and theta_max [rad] = 2.4831e-03
+[2024-12-02 12:57:49.459] [[36mdebug[m] [90minit_binning_real_space[0m: Bin 4 - theta_min [rad] = 2.4831e-03, theta [rad] = 2.9519e-03 and theta_max [rad] = 3.3755e-03
+[2024-12-02 12:57:49.459] [[36mdebug[m] [90minit_binning_real_space[0m: Bin 5 - theta_min [rad] = 3.3755e-03, theta [rad] = 4.0127e-03 and theta_max [rad] = 4.5885e-03
+[2024-12-02 12:57:49.459] [[36mdebug[m] [90minit_binning_real_space[0m: Bin 6 - theta_min [rad] = 4.5885e-03, theta [rad] = 5.4548e-03 and theta_max [rad] = 6.2373e-03
+[2024-12-02 12:57:49.459] [[36mdebug[m] [90minit_binning_real_space[0m: Bin 7 - theta_min [rad] = 6.2373e-03, theta [rad] = 7.4150e-03 and theta_max [rad] = 8.4788e-03
+[2024-12-02 12:57:49.459] [[36mdebug[m] [90minit_binning_real_space[0m: Bin 8 - theta_min [rad] = 8.4788e-03, theta [rad] = 1.0080e-02 and theta_max [rad] = 1.1526e-02
+[2024-12-02 12:57:49.459] [[36mdebug[m] [90minit_binning_real_space[0m: Bin 9 - theta_min [rad] = 1.1526e-02, theta [rad] = 1.3702e-02 and theta_max [rad] = 1.5667e-02
+[2024-12-02 12:57:49.459] [[36mdebug[m] [90minit_binning_real_space[0m: Bin 10 - theta_min [rad] = 1.5667e-02, theta [rad] = 1.8626e-02 and theta_max [rad] = 2.1298e-02
+[2024-12-02 12:57:49.459] [[36mdebug[m] [90minit_binning_real_space[0m: Bin 11 - theta_min [rad] = 2.1298e-02, theta [rad] = 2.5319e-02 and theta_max [rad] = 2.8951e-02
+[2024-12-02 12:57:49.460] [[36mdebug[m] [90minit_binning_real_space[0m: Bin 12 - theta_min [rad] = 2.8951e-02, theta [rad] = 3.4417e-02 and theta_max [rad] = 3.9355e-02
+[2024-12-02 12:57:49.460] [[36mdebug[m] [90minit_binning_real_space[0m: Bin 13 - theta_min [rad] = 3.9355e-02, theta [rad] = 4.6785e-02 and theta_max [rad] = 5.3497e-02
+[2024-12-02 12:57:49.460] [[36mdebug[m] [90minit_binning_real_space[0m: Bin 14 - theta_min [rad] = 5.3497e-02, theta [rad] = 6.3598e-02 and theta_max [rad] = 7.2722e-02
+[2024-12-02 12:57:49.460] [[36mdebug[m] [90minit_binning_real_space[0m: Ends
+[2024-12-02 12:57:49.460] [[36mdebug[m] [90minit_cosmo_runmode[0m: Begins
+[2024-12-02 12:57:49.460] [[36mdebug[m] [90minit_cosmo_runmode[0m: runmode = Halofit selected
+[2024-12-02 12:57:49.460] [[36mdebug[m] [90minit_cosmo_runmode[0m: Ends
+[2024-12-02 12:57:49.460] [[36mdebug[m] [90mset_cosmological_parameters[0m: Begins
+[2024-12-02 12:57:49.460] [[36mdebug[m] [90mset_cosmological_parameters[0m: Ends
+[2024-12-02 12:57:49.460] [[36mdebug[m] [90minit_distances[0m: Begins
+[2024-12-02 12:57:49.460] [[36mdebug[m] [90minit_distances[0m: Ends
+[2024-12-02 12:57:49.460] [[36mdebug[m] [90minit_IA[0m: Begins
+[2024-12-02 12:57:49.460] [[36mdebug[m] [90minit_IA[0m: IA MODEL = 0 selected.
+[2024-12-02 12:57:49.460] [[36mdebug[m] [90minit_IA[0m: Ends
+[2024-12-02 12:57:49.460] [[36mdebug[m] [90minit_source_sample[0m: Begins
+[2024-12-02 12:57:49.460] [[36mdebug[m] [90minit_source_sample[0m: tomo.shear_Npowerspectra = 55
+[2024-12-02 12:57:49.470] [[36mdebug[m] [90minit_source_sample[0m: bin 0 - <z_s> = 0.2811331676733191.
+[2024-12-02 12:57:49.471] [[36mdebug[m] [90minit_source_sample[0m: bin 1 - <z_s> = 0.482214139787961.
+[2024-12-02 12:57:49.471] [[36mdebug[m] [90minit_source_sample[0m: bin 2 - <z_s> = 0.6339326035414348.
+[2024-12-02 12:57:49.471] [[36mdebug[m] [90minit_source_sample[0m: bin 3 - <z_s> = 0.7819750228364022.
+[2024-12-02 12:57:49.472] [[36mdebug[m] [90minit_source_sample[0m: bin 4 - <z_s> = 0.9352488151520726.
+[2024-12-02 12:57:49.472] [[36mdebug[m] [90minit_source_sample[0m: bin 5 - <z_s> = 1.1032475279797178.
+[2024-12-02 12:57:49.472] [[36mdebug[m] [90minit_source_sample[0m: bin 6 - <z_s> = 1.300162392839878.
+[2024-12-02 12:57:49.473] [[36mdebug[m] [90minit_source_sample[0m: bin 7 - <z_s> = 1.5493980325672543.
+[2024-12-02 12:57:49.473] [[36mdebug[m] [90minit_source_sample[0m: bin 8 - <z_s> = 1.9069007138444594.
+[2024-12-02 12:57:49.473] [[36mdebug[m] [90minit_source_sample[0m: bin 9 - <z_s> = 2.6888613123189544.
+[2024-12-02 12:57:49.473] [[36mdebug[m] [90minit_source_sample[0m: shear_REDSHIFT_FILE = external_modules/data/roman_real/Roman_n30_10bins.nz selected.
+[2024-12-02 12:57:49.473] [[36mdebug[m] [90minit_source_sample[0m: shear_Nbin = 10 selected.
+[2024-12-02 12:57:49.473] [[36mdebug[m] [90minit_source_sample[0m: Ends
+[2024-12-02 12:57:49.473] [[36mdebug[m] [90minit_lens_sample[0m: Begins
+[2024-12-02 12:57:49.473] [[36mdebug[m] [90minit_lens_sample[0m: clustering_REDSHIFT_FILE = external_modules/data/roman_real/Roman_n30_10bins.nz selected.
+[2024-12-02 12:57:49.473] [[36mdebug[m] [90minit_lens_sample[0m: clustering_Nbin = 10 selected.
+[2024-12-02 12:57:49.480] [[36mdebug[m] [90minit_lens_sample[0m: tomo.ggl_Npowerspectra = 100
+[2024-12-02 12:57:49.480] [[36mdebug[m] [90minit_lens_sample[0m: Ends
+[2024-12-02 12:57:49.480] [[36mdebug[m] [90minit_data_3x2pt_real_space[0m: Begins
+[2024-12-02 12:57:49.480] [[36mdebug[m] [90minit_data_vector_size_3x2pt_real_space[0m: Begins
+[2024-12-02 12:57:49.480] [[32minfo[m] [90minit_data_vector_size_3x2pt_real_space[0m: Ndata = 3300 selected.
+[2024-12-02 12:57:49.480] [[36mdebug[m] [90minit_data_vector_size_3x2pt_real_space[0m: Ends
+[2024-12-02 12:57:49.487] [[36mdebug[m] [90mIP::set_mask[0m: mask file external_modules/data/roman_real/Roman_ones.mask left 3300 non-masked elements after masking
+[2024-12-02 12:58:06.263] [[36mdebug[m] [90minit_data_3x2pt_real_space[0m: Ends
+<cocoa_emu.cocoa_model.CocoaModel object at 0x2b2b18b3fa30>
+Iteration: 0
+[0/1] get_local_data_vector_list: iteration 0/10...
+1

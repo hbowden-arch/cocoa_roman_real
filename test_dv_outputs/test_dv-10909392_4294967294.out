@@ -1,0 +1,67 @@
+Running on host r4u05n2.puma.hpc.arizona.edu
+Time is Mon Dec 2 12:27:56 MST 2024
+Directory is /groups/behroozi/hbowden/cocoa/Cocoa/projects/roman_real
+Slurm job NAME is dv_chain
+Slurm job ID is 10909392
+Number of task is 1
+Number of cpus per task is 10
+[0;31m        (create_link_all_projects.sh) we cannot run [3m SYMLINK CREATION FAILED [0m
+calculating dvs
+[2024-12-02 12:28:05.951] [[36mdebug[m] [90minitial_setup[0m: Begins
+[2024-12-02 12:28:05.951] [[36mdebug[m] [90minitial_setup[0m: Ends
+[2024-12-02 12:28:05.951] [[36mdebug[m] [90minit_cosmo_runmode[0m: Begins
+[2024-12-02 12:28:05.951] [[36mdebug[m] [90minit_cosmo_runmode[0m: runmode = Halofit selected
+[2024-12-02 12:28:05.951] [[36mdebug[m] [90minit_cosmo_runmode[0m: Ends
+[2024-12-02 12:28:05.951] [[36mdebug[m] [90minit_source_sample[0m: Begins
+[2024-12-02 12:28:05.951] [[36mdebug[m] [90minit_source_sample[0m: tomo.shear_Npowerspectra = 55
+[2024-12-02 12:28:05.965] [[36mdebug[m] [90minit_source_sample[0m: bin 0 - <z_s> = 0.28113316439956754.
+[2024-12-02 12:28:05.965] [[36mdebug[m] [90minit_source_sample[0m: bin 1 - <z_s> = 0.4822141363988571.
+[2024-12-02 12:28:05.965] [[36mdebug[m] [90minit_source_sample[0m: bin 2 - <z_s> = 0.6339326035178553.
+[2024-12-02 12:28:05.965] [[36mdebug[m] [90minit_source_sample[0m: bin 3 - <z_s> = 0.7819750236988183.
+[2024-12-02 12:28:05.966] [[36mdebug[m] [90minit_source_sample[0m: bin 4 - <z_s> = 0.935248815430862.
+[2024-12-02 12:28:05.966] [[36mdebug[m] [90minit_source_sample[0m: bin 5 - <z_s> = 1.1032475276822553.
+[2024-12-02 12:28:05.966] [[36mdebug[m] [90minit_source_sample[0m: bin 6 - <z_s> = 1.3001623994192664.
+[2024-12-02 12:28:05.967] [[36mdebug[m] [90minit_source_sample[0m: bin 7 - <z_s> = 1.549398025894311.
+[2024-12-02 12:28:05.967] [[36mdebug[m] [90minit_source_sample[0m: bin 8 - <z_s> = 1.9069007140867131.
+[2024-12-02 12:28:05.967] [[36mdebug[m] [90minit_source_sample[0m: bin 9 - <z_s> = 2.6888613206295036.
+[2024-12-02 12:28:05.967] [[36mdebug[m] [90minit_source_sample[0m: shear_REDSHIFT_FILE = /groups/behroozi/hbowden/cocoa/Cocoa/projects/roman_real/data/Roman_n30_10bins.nz selected.
+[2024-12-02 12:28:05.967] [[36mdebug[m] [90minit_source_sample[0m: shear_Nbin = 10 selected.
+[2024-12-02 12:28:05.967] [[36mdebug[m] [90minit_source_sample[0m: Ends
+[2024-12-02 12:28:05.967] [[36mdebug[m] [90minit_lens_sample[0m: Begins
+[2024-12-02 12:28:05.967] [[36mdebug[m] [90minit_lens_sample[0m: clustering_REDSHIFT_FILE = /groups/behroozi/hbowden/cocoa/Cocoa/projects/roman_real/data/Roman_n30_10bins.nz selected.
+[2024-12-02 12:28:05.967] [[36mdebug[m] [90minit_lens_sample[0m: clustering_Nbin = 10 selected.
+[2024-12-02 12:28:05.974] [[36mdebug[m] [90minit_lens_sample[0m: tomo.ggl_Npowerspectra = 100
+[2024-12-02 12:28:05.974] [[36mdebug[m] [90minit_lens_sample[0m: Ends
+[2024-12-02 12:28:05.974] [[36mdebug[m] [90minit_IA[0m: Begins
+[2024-12-02 12:28:05.974] [[36mdebug[m] [90minit_IA[0m: IA MODEL = 0 selected.
+[2024-12-02 12:28:05.974] [[36mdebug[m] [90minit_IA[0m: Ends
+[2024-12-02 12:28:05.974] [[36mdebug[m] [90minit_probes[0m: Begins
+[2024-12-02 12:28:05.974] [[36mdebug[m] [90minit_probes[0m: possible_probes = 3x2pt selected
+[2024-12-02 12:28:05.974] [[36mdebug[m] [90minit_probes[0m: Ends
+[2024-12-02 12:28:05.974] [[36mdebug[m] [90minit_binning_real_space[0m: Begins
+[2024-12-02 12:28:05.974] [[36mdebug[m] [90minit_binning_real_space[0m: Ntheta = 15 selected.
+[2024-12-02 12:28:05.974] [[36mdebug[m] [90minit_binning_real_space[0m: theta_min_arcmin = 2.5 selected.
+[2024-12-02 12:28:05.974] [[36mdebug[m] [90minit_binning_real_space[0m: theta_max_arcmin = 250 selected.
+[2024-12-02 12:28:05.974] [[36mdebug[m] [90minit_binning_real_space[0m: Bin 0 - theta_min [rad] = 7.2722e-04, theta [rad] = 8.6452e-04 and theta_max [rad] = 9.8855e-04
+[2024-12-02 12:28:05.974] [[36mdebug[m] [90minit_binning_real_space[0m: Bin 1 - theta_min [rad] = 9.8855e-04, theta [rad] = 1.1752e-03 and theta_max [rad] = 1.3438e-03
+[2024-12-02 12:28:05.974] [[36mdebug[m] [90minit_binning_real_space[0m: Bin 2 - theta_min [rad] = 1.3438e-03, theta [rad] = 1.5975e-03 and theta_max [rad] = 1.8267e-03
+[2024-12-02 12:28:05.974] [[36mdebug[m] [90minit_binning_real_space[0m: Bin 3 - theta_min [rad] = 1.8267e-03, theta [rad] = 2.1716e-03 and theta_max [rad] = 2.4831e-03
+[2024-12-02 12:28:05.974] [[36mdebug[m] [90minit_binning_real_space[0m: Bin 4 - theta_min [rad] = 2.4831e-03, theta [rad] = 2.9519e-03 and theta_max [rad] = 3.3755e-03
+[2024-12-02 12:28:05.974] [[36mdebug[m] [90minit_binning_real_space[0m: Bin 5 - theta_min [rad] = 3.3755e-03, theta [rad] = 4.0127e-03 and theta_max [rad] = 4.5885e-03
+[2024-12-02 12:28:05.974] [[36mdebug[m] [90minit_binning_real_space[0m: Bin 6 - theta_min [rad] = 4.5885e-03, theta [rad] = 5.4548e-03 and theta_max [rad] = 6.2373e-03
+[2024-12-02 12:28:05.974] [[36mdebug[m] [90minit_binning_real_space[0m: Bin 7 - theta_min [rad] = 6.2373e-03, theta [rad] = 7.4150e-03 and theta_max [rad] = 8.4788e-03
+[2024-12-02 12:28:05.974] [[36mdebug[m] [90minit_binning_real_space[0m: Bin 8 - theta_min [rad] = 8.4788e-03, theta [rad] = 1.0080e-02 and theta_max [rad] = 1.1526e-02
+[2024-12-02 12:28:05.974] [[36mdebug[m] [90minit_binning_real_space[0m: Bin 9 - theta_min [rad] = 1.1526e-02, theta [rad] = 1.3702e-02 and theta_max [rad] = 1.5667e-02
+[2024-12-02 12:28:05.974] [[36mdebug[m] [90minit_binning_real_space[0m: Bin 10 - theta_min [rad] = 1.5667e-02, theta [rad] = 1.8626e-02 and theta_max [rad] = 2.1298e-02
+[2024-12-02 12:28:05.974] [[36mdebug[m] [90minit_binning_real_space[0m: Bin 11 - theta_min [rad] = 2.1298e-02, theta [rad] = 2.5319e-02 and theta_max [rad] = 2.8951e-02
+[2024-12-02 12:28:05.974] [[36mdebug[m] [90minit_binning_real_space[0m: Bin 12 - theta_min [rad] = 2.8951e-02, theta [rad] = 3.4417e-02 and theta_max [rad] = 3.9355e-02
+[2024-12-02 12:28:05.974] [[36mdebug[m] [90minit_binning_real_space[0m: Bin 13 - theta_min [rad] = 3.9355e-02, theta [rad] = 4.6785e-02 and theta_max [rad] = 5.3497e-02
+[2024-12-02 12:28:05.974] [[36mdebug[m] [90minit_binning_real_space[0m: Bin 14 - theta_min [rad] = 5.3497e-02, theta [rad] = 6.3598e-02 and theta_max [rad] = 7.2722e-02
+[2024-12-02 12:28:05.974] [[36mdebug[m] [90minit_binning_real_space[0m: Ends
+[2024-12-02 12:28:05.974] [[36mdebug[m] [90minit_data_3x2pt_real_space[0m: Begins
+[2024-12-02 12:28:05.974] [[36mdebug[m] [90minit_data_vector_size_3x2pt_real_space[0m: Begins
+[2024-12-02 12:28:05.974] [[32minfo[m] [90minit_data_vector_size_3x2pt_real_space[0m: Ndata = 3300 selected.
+[2024-12-02 12:28:05.974] [[36mdebug[m] [90minit_data_vector_size_3x2pt_real_space[0m: Ends
+[2024-12-02 12:28:05.980] [[36mdebug[m] [90mIP::set_mask[0m: mask file /groups/behroozi/hbowden/cocoa/Cocoa/projects/roman_real/data/Roman_ones.mask left 3300 non-masked elements after masking
+[2024-12-02 12:28:10.797] [[36mdebug[m] [90minit_data_3x2pt_real_space[0m: Ends
+[2024-12-02 12:28:10.797] [[36mdebug[m] [90mcompute_data_vector_3x2pt_real_masked_any_order[0m: Begins

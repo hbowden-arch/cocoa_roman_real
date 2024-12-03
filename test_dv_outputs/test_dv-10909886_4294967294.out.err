@@ -1,0 +1,40 @@
+/groups/behroozi/hbowden/cocoa/Cocoa/installation_scripts/create_link_all_projects.sh: line 55: /dev/tty: No such device or address
+Cannot retrieve calculated quantities: nothing has been computed yet (maybe the prior was -infinity?)
+Traceback (most recent call last):
+  File "/groups/behroozi/hbowden/cocoa/Cocoa/cobaya/cobaya/theory.py", line 277, in current_state
+    return self._current_state
+AttributeError: 'CAMB' object has no attribute '_current_state'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/groups/behroozi/hbowden/cocoa/Cocoa/projects/roman_real/calc_dvs.py", line 233, in <module>
+    train_samples, train_data_vectors, train_sigma8 = get_data_vectors(params_train, comm, rank, label_train)
+  File "/groups/behroozi/hbowden/cocoa/Cocoa/projects/roman_real/calc_dvs.py", line 194, in get_data_vectors
+    local_params_list, local_data_vector_list, local_sigma8_list = get_local_data_vector_list(params_list,rank,label)
+  File "/groups/behroozi/hbowden/cocoa/Cocoa/projects/roman_real/calc_dvs.py", line 167, in get_local_data_vector_list
+    data_vector = cocoa_model.calculate_data_vector(params_list[i])
+  File "/groups/behroozi/hbowden/cocoa/Cocoa/projects/roman_real/cocoa_emu/cocoa_model.py", line 60, in calculate_data_vector
+    data_vector = likelihood.get_datavector(**input_params)
+  File "/groups/behroozi/hbowden/cocoa/Cocoa/cobaya/cobaya/likelihoods/roman_real/roman_real_3x2pt.py", line 15, in get_datavector
+    datavector = self.internal_get_datavector(**params_values)
+  File "/groups/behroozi/hbowden/cocoa/Cocoa/cobaya/cobaya/likelihoods/roman_real/roman_real_3x2pt.py", line 19, in internal_get_datavector
+    self.set_cosmo_related()
+  File "/groups/behroozi/hbowden/cocoa/Cocoa/cobaya/cobaya/likelihoods/roman_real/_cosmolike_prototype_base.py", line 249, in set_cosmo_related
+    PKL = self.provider.get_Pk_interpolator(("delta_tot", "delta_tot"),
+  File "/groups/behroozi/hbowden/cocoa/Cocoa/cobaya/cobaya/theories/cosmo/boltzmannbase.py", line 445, in get_Pk_interpolator
+    if key in self.current_state:
+  File "/groups/behroozi/hbowden/cocoa/Cocoa/cobaya/cobaya/theory.py", line 279, in current_state
+    raise LoggedError(self.log, "Cannot retrieve calculated quantities: "
+cobaya.log.LoggedError: Cannot retrieve calculated quantities: nothing has been computed yet (maybe the prior was -infinity?)
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun detected that one or more processes exited with non-zero status, thus causing
+the job to be terminated. The first process to do so was:
+
+  Process name: [[11829,1],0]
+  Exit code:    1
+--------------------------------------------------------------------------

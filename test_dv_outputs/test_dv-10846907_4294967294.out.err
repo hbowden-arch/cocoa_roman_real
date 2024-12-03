@@ -1,0 +1,18 @@
+/groups/behroozi/hbowden/cocoa/Cocoa/installation_scripts/create_link_all_projects.sh: line 67: /dev/tty: No such device or address
+Traceback (most recent call last):
+  File "/groups/behroozi/hbowden/cocoa/Cocoa/projects/roman_real/calc_dvs.py", line 220, in <module>
+    train_samples, train_data_vectors, train_sigma8 = get_data_vectors(params_train, comm, rank, label_train)
+  File "/groups/behroozi/hbowden/cocoa/Cocoa/projects/roman_real/calc_dvs.py", line 196, in get_data_vectors
+    sigma8_list      = sigma8_list + new_sigma8_list
+TypeError: unsupported operand type(s) for +: 'NoneType' and 'NoneType'
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun detected that one or more processes exited with non-zero status, thus causing
+the job to be terminated. The first process to do so was:
+
+  Process name: [[19709,1],0]
+  Exit code:    1
+--------------------------------------------------------------------------

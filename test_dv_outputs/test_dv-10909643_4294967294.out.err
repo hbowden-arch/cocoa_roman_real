@@ -1,0 +1,13 @@
+/groups/behroozi/hbowden/cocoa/Cocoa/installation_scripts/create_link_all_projects.sh: line 67: /dev/tty: No such device or address
+--------------------------------------------------------------------------
+A request for multiple cpus-per-proc was given, but a directive
+was also given to map to an object level that has less cpus than
+requested ones:
+
+  #cpus-per-proc:  6
+  number of cpus:  2
+  map-by:          BYNUMA:OVERSUBSCRIBE
+
+Please specify a mapping level that has more cpus, or else let us
+define a default mapping that will allow multiple cpus-per-proc.
+--------------------------------------------------------------------------

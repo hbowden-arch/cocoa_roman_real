@@ -1,0 +1,2 @@
+/groups/behroozi/hbowden/cocoa/Cocoa/installation_scripts/create_link_all_projects.sh: line 67: /dev/tty: No such device or address
+Dec 02 16:07:40.42195  37379 slurmstepd   0x2ad894b62700: error: *** JOB 10909534 ON r3u06n2 CANCELLED AT 2024-12-02T16:07:40 ***
